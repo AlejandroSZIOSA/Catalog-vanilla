@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +9,16 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  /* position: relative; */
 }
 
 header {
-  background-color: #f4f4f4;
-  padding: 20px 0;
-  text-align: center;
+  display: flex;
+  background-color: brown;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  justify-content: right;
 }
 
 nav ul {
@@ -24,18 +30,74 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: white;
 }
 
 main {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
 }
 
 footer {
   background-color: #f4f4f4;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
+  /*   position: fixed; */
   width: 100%;
   bottom: 0;
+}
+
+.menu-hamburger {
+  width: 50px;
+  height: 50px;
+}
+
+.menu-desktop {
+  display: none;
+}
+
+#landing {
+  margin: 0 auto;
+}
+
+.landing-inner__container {
+  position: relative;
+  width: 90%;
+}
+
+.landing__image {
+  width: 340px;
+  height: 90vh;
+  object-fit: contain;
+}
+
+.landing-first_title {
+  font-family: "Kirang Haerang", cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.landing-second_title {
+  font-family: "Kirang Haerang", cursive;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  .menu-hamburger {
+    display: none;
+  }
+
+  .menu-desktop {
+    display: block;
+  }
+
+  .landing__image {
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+  }
 }

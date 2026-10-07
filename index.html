@@ -8,8 +8,12 @@
   </head>
   <body>
     <header>
-      <h1>Welcome to My Catalog</h1>
-      <nav>
+      <img
+        class="menu-hamburger"
+        src="./assets/menu-hamburger.png"
+        alt="menu-hamburger"
+      />
+      <nav class="menu-desktop">
         <ul>
           <li><a href="#landing">Landing</a></li>
           <li><a href="#catalog">Catalog</a></li>
@@ -18,11 +22,18 @@
     </header>
     <main>
       <section id="landing">
-        <h2>Landing Section</h2>
-        <p>Welcome to the catalog. Browse our collection below.</p>
+        <div class="landing-inner__container">
+          <img
+            class="landing__image"
+            src="/assets/vanilla-1800.webp"
+            alt="hero image"
+          />
+          <h2 class="landing-first_title">Your Vanilla</h2>
+          <h2 class="landing-second_title">Catalog Anytime</h2>
+        </div>
       </section>
       <section id="catalog">
-        <h2>Catalog Section</h2>
+        <h2>Catalog here</h2>
         <p>Explore our wide range of products.</p>
       </section>
     </main>
