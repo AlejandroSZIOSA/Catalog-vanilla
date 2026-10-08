@@ -26,4 +26,8 @@ const cars = [
   },
 ];
 
-console.log(movies);
+const menuHamburgerBtnEl = document.querySelector("#menuHamburger");
+
+menuHamburgerBtnEl.addEventListener("click", () => {
+  console.log("click");
+});
