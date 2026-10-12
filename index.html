@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body id="body">
     <header>
       <button id="menuHamburger" >
       <img
@@ -14,25 +14,27 @@
         alt="menu-hamburger"
       />
       </button>
-      <nav id="menuDesktop">
+      <nav id="navMenu">
         <ul>
-          <li><a href="#heroSection">Hero</a></li>
+          <li><a href="#body">Hero</a></li>
           <li><a href="#catalogSection">Catalog</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section id="heroSection">        
-          <h2 class="hero-first_title">The Vanilla Catalog</>
-          <h2 class="hero-second_title">Anytime</>
+          <h2 class="hero-first_title">A Vanilla Shoping Catalog</>
+          <h2 class="hero-second_title">Anytime and Anywhere</>
       </section>
       <section id="catalogSection">
-        <h2>Catalog here</h2>
-        <p>Explore our wide range of products.</p>
+        <h2>Catalog</h2>
+      <!--   <p>Explore our wide range of products.</p> -->
+        <ol id="carsStockList"></ol>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2024 My Catalog</p>
+    <footer id="contact">
+      <p>Contact: <strong>076-89099876</strong></p>
     </footer>
   </body>
   <script src="script.js" type="module"></script>

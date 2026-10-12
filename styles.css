@@ -51,18 +51,42 @@ footer {
   bottom: 0;
 }
 
+/* #navMenu {
+  display: none;
+} */
+
+/* #menuHamburger.active {
+  background-color: #aa890b;
+} */
+
 #menuHamburger img {
   width: 40px;
 }
 
-#menuDesktop {
+#navMenu {
   display: none;
 }
 
+/* only on mobile */
+#navMenu.active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #4c3328;
+}
+
+#navMenu a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
 #heroSection {
-  /* margin: 0 auto; */
   position: relative;
-  min-height: 70vh;
+  min-height: 95vh;
   background-image:
     linear-gradient(rgba(255, 217, 0, 0.1), rgba(0, 0, 0, 0.3)),
     url("./assets/vanilla-1800.webp");
@@ -84,8 +108,50 @@ footer {
 
 .hero-second_title {
   bottom: 5%;
-  left: 52%;
-  transform: translateX(-50%);
+  left: 32%;
+  /* transform: translateX(-50%); */
+}
+#catalogSection h2 {
+  text-align: center;
+}
+
+#carsStockList {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+#carsStockList li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #39291f;
+  border-radius: 5px;
+}
+
+#carsStockList li div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#carsStockList li div h3 {
+  margin-left: 4rem;
+  text-align: center;
+}
+
+#carsStockList li button {
+  width: 80px;
+  padding: 1rem;
+  align-self: flex-end;
+  background-color: #aa890b;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
@@ -93,8 +159,12 @@ footer {
     display: none;
   }
 
-  #menuDesktop {
+  #navMenu {
     display: block;
+  }
+
+  #navMenu a {
+    padding: 10px;
   }
 
   #heroSection {
