@@ -105,7 +105,6 @@ footer {
 .hero-second_title {
   bottom: 5%;
   left: 22%;
-  /*  transform: translateX(-50%); */
 }
 
 #catalog {
@@ -114,7 +113,6 @@ footer {
 
 #catalog h2 {
   text-align: center;
-  /*  margin: 8px 0; */
   margin-bottom: 0.5rem;
 }
 

@@ -1,4 +1,4 @@
-const carsInStock = [
+const cars = [
   {
     make: "Toyota",
     model: "Corolla",
@@ -45,30 +45,27 @@ const carsInStock = [
 
 const hamburgerBtnEl = document.querySelector("#menuHamburger");
 const menuEl = document.querySelector("#navMenu");
+const menuLinksEl = menuEl.querySelectorAll("a");
 const carsListEl = document.querySelector("#carsList");
 
 hamburgerBtnEl.addEventListener("click", () => {
-  console.log("click");
   menuEl.classList.toggle("active");
   hamburgerBtnEl.classList.toggle("active");
 
-  // close the menu after selection of an item
-  const menuLinksEl = menuEl.querySelectorAll("a");
-
+  // hide the menu after selection
   menuLinksEl.forEach((link) => {
     link.addEventListener("click", () => {
-      menuEl.classList.remove("active");
-      hamburgerBtnEl.classList.remove("active");
+      hideMenu(menuEl, hamburgerBtnEl);
     });
   });
 });
 
-carsInStock.forEach((p) => {
-  const li = document.createElement("li");
-  const button = document.createElement("button");
-  button.id = "buyButton";
-  button.textContent = "Buy";
-  li.innerHTML = `
+cars.forEach((p) => {
+  const liEl = document.createElement("li");
+  const buttonEl = document.createElement("button");
+  buttonEl.id = "buyButton";
+  buttonEl.textContent = "Buy";
+  liEl.innerHTML = `
  <div>
  <h3>${p.make}</h3>
   <p>Model: ${p.model}</p> 
@@ -76,21 +73,26 @@ carsInStock.forEach((p) => {
  <p>Price: ${p.price} € </p>  
  </div>
  `;
-  li.appendChild(button);
+  liEl.appendChild(buttonEl);
 
-  button.addEventListener("click", () => {
-    toggleButton(button);
+  buttonEl.addEventListener("click", () => {
+    toggleButtonStyle(buttonEl);
   });
 
-  carsListEl.appendChild(li);
+  carsListEl.appendChild(liEl);
 });
 
-function toggleButton(button) {
-  if (button.textContent === "Buy") {
-    button.textContent = "Bought";
-    button.style.backgroundColor = "green";
+function hideMenu(menuEl, hamburgerBtnEl) {
+  menuEl.classList.toggle("active");
+  hamburgerBtnEl.classList.toggle("active");
+}
+
+function toggleButtonStyle(btn) {
+  if (btn.textContent === "Buy") {
+    btn.textContent = "Bought";
+    btn.style.backgroundColor = "green";
   } else {
-    button.textContent = "Buy";
-    button.style.backgroundColor = "";
+    btn.textContent = "Buy";
+    btn.style.backgroundColor = "";
   }
 }
