@@ -9,7 +9,6 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  /* position: relative; */
 }
 
 header {
@@ -20,8 +19,7 @@ header {
   z-index: 1000;
   justify-content: right;
   align-items: center;
-  height: 3.8rem;
-  padding: 0.5rem;
+  height: 3.2rem;
 }
 
 nav ul {
@@ -39,25 +37,23 @@ nav a {
 main {
   display: flex;
   flex-direction: column;
-  /* padding: 20px; */
 }
 
 footer {
-  background-color: #f4f4f4;
+  background-color: #aa890b;
   text-align: center;
   padding: 10px 0;
-  /*   position: fixed; */
   width: 100%;
   bottom: 0;
 }
 
-/* #navMenu {
-  display: none;
-} */
+#menuHamburger {
+  margin-right: 0.2rem;
+}
 
-/* #menuHamburger.active {
-  background-color: #aa890b;
-} */
+#menuHamburger.active {
+  background-color: #4c3328;
+}
 
 #menuHamburger img {
   width: 40px;
@@ -67,11 +63,11 @@ footer {
   display: none;
 }
 
-/* only on mobile */
+/* actived only on mobile */
 #navMenu.active {
   display: block;
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 0;
   width: 100%;
   background-color: #4c3328;
@@ -102,20 +98,27 @@ footer {
 }
 
 .hero-first_title {
-  top: 5%;
-  left: 5%;
+  top: 8%;
+  left: 18%;
 }
 
 .hero-second_title {
   bottom: 5%;
-  left: 32%;
-  /* transform: translateX(-50%); */
-}
-#catalogSection h2 {
-  text-align: center;
+  left: 22%;
+  /*  transform: translateX(-50%); */
 }
 
-#carsStockList {
+#catalog {
+  margin: 0.8rem 0;
+}
+
+#catalog h2 {
+  text-align: center;
+  /*  margin: 8px 0; */
+  margin-bottom: 0.5rem;
+}
+
+#carsList {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -123,7 +126,7 @@ footer {
   gap: 10px;
 }
 
-#carsStockList li {
+#carsList li {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -133,19 +136,19 @@ footer {
   border-radius: 5px;
 }
 
-#carsStockList li div {
+#carsList li div {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-#carsStockList li div h3 {
+#carsList li div h3 {
   margin-left: 4rem;
   text-align: center;
 }
 
-#carsStockList li button {
-  width: 80px;
+#carsList li button {
+  width: 95px;
   padding: 1rem;
   align-self: flex-end;
   background-color: #aa890b;
@@ -155,6 +158,10 @@ footer {
 }
 
 @media (min-width: 1024px) {
+  header {
+    height: 2.8rem;
+  }
+
   #menuHamburger {
     display: none;
   }
@@ -169,5 +176,29 @@ footer {
 
   #heroSection {
     min-height: 50vh;
+  }
+
+  .hero-first_title {
+    left: 5%;
+  }
+
+  .hero-second_title {
+    left: 80%;
+  }
+
+  #carsList {
+    flex-direction: row;
+    gap: 20px;
+    padding: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 90%;
+  }
+
+  footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 2.8rem;
   }
 }

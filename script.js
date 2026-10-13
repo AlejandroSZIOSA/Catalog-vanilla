@@ -29,23 +29,38 @@ const carsInStock = [
     year: 2022,
     price: 27000,
   },
+  {
+    make: "Mercedez",
+    model: " S-Class",
+    year: 2022,
+    price: 90000,
+  },
+  {
+    make: "BMW",
+    model: "X5",
+    year: 2023,
+    price: 80000,
+  },
 ];
 
-const menuHamburgerBtnEl = document.querySelector("#menuHamburger");
-const menuDesktopEl = document.querySelector("#navMenu");
-const productListEl = document.querySelector("#carsStockList");
+const hamburgerBtnEl = document.querySelector("#menuHamburger");
+const menuEl = document.querySelector("#navMenu");
+const carsListEl = document.querySelector("#carsList");
 
-menuHamburgerBtnEl.addEventListener("click", () => {
+hamburgerBtnEl.addEventListener("click", () => {
   console.log("click");
-  menuDesktopEl.classList.toggle("active");
-  menuHamburgerBtnEl.classList.toggle("active");
+  menuEl.classList.toggle("active");
+  hamburgerBtnEl.classList.toggle("active");
 
-  if (menuDesktopEl.classList.contains("active")) {
-    setTimeout(() => {
-      menuDesktopEl.classList.remove("active");
-      menuHamburgerBtnEl.classList.remove("active");
-    }, 2000);
-  }
+  // close the menu after selection of an item
+  const menuLinksEl = menuEl.querySelectorAll("a");
+
+  menuLinksEl.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuEl.classList.remove("active");
+      hamburgerBtnEl.classList.remove("active");
+    });
+  });
 });
 
 carsInStock.forEach((p) => {
@@ -58,7 +73,7 @@ carsInStock.forEach((p) => {
  <h3>${p.make}</h3>
   <p>Model: ${p.model}</p> 
  <p>Year: ${p.year}</p>  
- <p>Price: ${p.price} euros</p>  
+ <p>Price: ${p.price} € </p>  
  </div>
  `;
   li.appendChild(button);
@@ -67,7 +82,7 @@ carsInStock.forEach((p) => {
     toggleButton(button);
   });
 
-  productListEl.appendChild(li);
+  carsListEl.appendChild(li);
 });
 
 function toggleButton(button) {
