@@ -44,18 +44,18 @@ const cars = [
 ];
 
 const hamburgerBtnEl = document.querySelector("#menuHamburger");
-const menuEl = document.querySelector("#navMenu");
-const menuLinksEl = menuEl.querySelectorAll("a");
+const menuNavEl = document.querySelector("#navMenu");
+const menuLinksEl = menuNavEl.querySelectorAll("a");
 const carsListEl = document.querySelector("#carsList");
 
 hamburgerBtnEl.addEventListener("click", () => {
-  menuEl.classList.toggle("active");
+  menuNavEl.classList.toggle("active");
   hamburgerBtnEl.classList.toggle("active");
 
   // hide the menu after selection
   menuLinksEl.forEach((link) => {
     link.addEventListener("click", () => {
-      hideMenu(menuEl, hamburgerBtnEl);
+      hideMenu(menuNavEl, hamburgerBtnEl);
     });
   });
 });
@@ -82,9 +82,9 @@ cars.forEach((p) => {
   carsListEl.appendChild(liEl);
 });
 
-function hideMenu(menuEl, hamburgerBtnEl) {
-  menuEl.classList.toggle("active");
-  hamburgerBtnEl.classList.toggle("active");
+function hideMenu(menu, hamburgerBtn) {
+  menu.classList.toggle("active"); //check if "active class" exists and toggle it
+  hamburgerBtn.classList.toggle("active");
 }
 
 function toggleButtonStyle(btn) {
