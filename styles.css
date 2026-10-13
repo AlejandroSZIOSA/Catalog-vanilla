@@ -189,7 +189,7 @@ footer {
   #carsList {
     flex-direction: row;
     gap: 20px;
-    padding: 1rem;
+    padding: 2rem;
     overflow-x: auto;
     overflow-y: hidden;
     width: 90%;
