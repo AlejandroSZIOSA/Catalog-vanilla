@@ -83,8 +83,8 @@ cars.forEach((p) => {
 });
 
 function hideMenu(menu, hamburgerBtn) {
-  menu.classList.toggle("active"); //check if "active class" exists and toggle it
-  hamburgerBtn.classList.toggle("active");
+  menu.classList.remove("active"); //check if "active class" exists and toggle it
+  hamburgerBtn.classList.remove("active");
 }
 
 function toggleButtonStyle(btn) {
