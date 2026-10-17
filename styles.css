@@ -44,7 +44,6 @@ footer {
   text-align: center;
   padding: 10px 0;
   width: 100%;
-  bottom: 0;
 }
 
 #menuHamburger {
@@ -198,5 +197,6 @@ footer {
     display: flex;
     justify-content: center;
     height: 2.8rem;
+    bottom: 0;
   }
 }
