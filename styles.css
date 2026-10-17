@@ -58,6 +58,7 @@ footer {
   width: 40px;
 }
 
+/* disables at the start, only on mobile */
 #navMenu {
   display: none;
 }
